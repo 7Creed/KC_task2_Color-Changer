@@ -9,8 +9,8 @@ const Header = () => {
       <nav>
         {/* <Link href="/">Simple</Link> */}
         {/* <Link to={links[0].link}>Hex</Link> */}
-        <a href="/">Simple</a>
-        <a href="/">Hex</a>
+        <a href="#">Simple</a>
+        <a href="#">Hex</a>
       </nav>
     </header>
   );

@@ -20,7 +20,7 @@ const Header = ({ simple, setSimple, hex, setHex }) => {
     setSimple(id === 1);
     setHex(id === 2);
   };
-  console.log(simple, hex);
+  // console.log(simple, hex);
 
   return (
     <header>
@@ -28,10 +28,6 @@ const Header = ({ simple, setSimple, hex, setHex }) => {
       <nav>
         {/* <Link href="/">Simple</Link> */}
         {/* <Link to={links[0].link}>Hex</Link> */}
-        {/* <a href="#" onClick={handleClick}>
-          Simple
-        </a>
-        <a href="#">Hex</a> */}
 
         {navs.map((nav) => {
           return (

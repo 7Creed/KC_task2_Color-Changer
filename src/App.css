@@ -5,6 +5,7 @@ header {
   align-items: center;
   padding: 1rem;
   width: 100%;
+  max-width: 100vw;
   box-shadow: 0px 7px 10px -9px rgba(0, 0, 0, 0.81);
   z-index: 10;
 }
@@ -29,7 +30,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 95vh;
-  width: 100vw;
+  max-width: 100vw;
   margin: auto;
   /* background-color: #f1f5f3; */
 }
@@ -66,18 +67,26 @@ main button {
   color: black;
 }
 
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 30px;
+    width: 65%;
+  }
 
+  nav {
+    width: 35%;
+  }
+}
 
 @media (min-width: 766px) {
   header h1 {
     font-family: Inter, serif;
     width: 80%;
   }
-  
+
   nav {
     width: 20%;
     display: flex;
     justify-content: space-around;
   }
 }
-

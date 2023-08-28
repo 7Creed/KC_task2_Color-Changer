@@ -6,6 +6,7 @@ const Main = () => {
 
   const mainStyle = {
     backgroundColor: backgroundColor,
+    transition: "background-color 0.5s ease-in-out",
   };
 
   const colorObj = [
@@ -20,12 +21,16 @@ const Main = () => {
     "yellow",
     "indigo",
   ];
-  const handleColorChange = () => {
+  const handleSimpColorChange = () => {
     // Generate a random color for the background
     // const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     const randomColor = Math.floor(Math.random() * colorObj.length);
     setBackgroundColor(colorObj[randomColor]);
     setButtonColor(true);
+  };
+
+  const handleHexColorChange = () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   };
 
   return (
@@ -38,7 +43,7 @@ const Main = () => {
           className={`${
             backgroundColor === "pink" ? "btn_white" : buttonColor && "btn"
           }`}
-          onClick={handleColorChange}
+          onClick={handleSimpColorChange}
         >
           Change Color
         </button>

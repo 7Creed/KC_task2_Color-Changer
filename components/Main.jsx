@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Main = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#f1f5f3");
+const Main = ({ simple, hex, backgroundColor, setBackgroundColor }) => {
   const [buttonColor, setButtonColor] = useState(false);
+
+  // Reset the background color when simple or hex is true
+  useEffect(() => {
+    if (simple || hex) {
+      setBackgroundColor("#f1f5f3");
+      setButtonColor(false);
+    }
+  }, [simple, hex]);
 
   const mainStyle = {
     backgroundColor: backgroundColor,
@@ -31,6 +38,8 @@ const Main = () => {
 
   const handleHexColorChange = () => {
     const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    setBackgroundColor(randomColor);
+    setButtonColor(true);
   };
 
   return (
@@ -43,7 +52,13 @@ const Main = () => {
           className={`${
             backgroundColor === "pink" ? "btn_white" : buttonColor && "btn"
           }`}
-          onClick={handleSimpColorChange}
+          onClick={
+            simple
+              ? handleSimpColorChange
+              : hex
+              ? handleHexColorChange
+              : handleSimpColorChange
+          }
         >
           Change Color
         </button>
